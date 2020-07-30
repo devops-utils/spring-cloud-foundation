@@ -2,13 +2,6 @@ language: java
 jdk:
   - openjdk8
 
-jobs:
-  include:
-    - stage: coverage
-      env:
-        - TESTING_PROFILE=unit-tests
-      script: mvn clean test jacoco:report coveralls:report -P$TESTING_PROFILE,coverage
-
 notifications:
   email:
     recipients:
@@ -23,7 +16,9 @@ before_install:
   - pip install --user codecov
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -F ${TESTING_PROFILE//-}
+  - mvn clean test jacoco:report coveralls:report
+  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 
 branches:
   only:
