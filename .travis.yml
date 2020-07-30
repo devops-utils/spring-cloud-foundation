@@ -9,7 +9,7 @@ jobs:
         - TESTING_PROFILE=unit-tests
       script: mvn clean test jacoco:report coveralls:report -P$TESTING_PROFILE,coverage
 
-notification:
+notifications:
   email:
     recipients:
       - zhangchunsheng423@gmail.com
