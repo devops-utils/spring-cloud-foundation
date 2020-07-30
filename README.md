@@ -12,6 +12,9 @@
 - [java8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 - [maven](http://maven.apache.org/) 
 
+https://github.com/codecov/example-java
+https://github.com/codecov/example-java-maven
+
 ### 开发环境搭建
 
 linux和mac下可在项目根目录下执行 `./install.sh` 快速搭建开发环境。如要了解具体的步骤，请看如下文档。
