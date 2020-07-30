@@ -2,6 +2,9 @@ language: java
 jdk:
   - openjdk8
 
+env:
+  - TESTING_PROFILE=coverage
+
 notifications:
   email:
     recipients:
@@ -16,9 +19,9 @@ before_install:
   - pip install --user codecov
 
 after_success:
-  - mvn clean test jacoco:report coveralls:report
+  - mvn clean test jacoco:report coveralls:report -P$TESTING_PROFILE
   - codecov
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -F ${TESTING_PROFILE//-} || echo "Codecov did not collect coverage reports"
 
 branches:
   only:
