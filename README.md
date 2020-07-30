@@ -14,6 +14,7 @@
 
 https://github.com/codecov/example-java
 https://github.com/codecov/example-java-maven
+https://github.com/dockstore/dockstore/blob/15f3e6c713ab446aeb489c0b7732bf81351de530/.travis.yml
 
 ### 开发环境搭建
 
